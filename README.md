@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## Shoveler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+When it snows, there are people who have difficulty or are unable to shovel the walkway at their place of residence. Some have family members, friends, or contractors to help them with this task. For those who don't have these resources, Shoveler seeks to be a solution.
 
-## Available Scripts
+The goals of this project, which is still in its infancy, are as follows:
 
-In the project directory, you can run:
+- If you are in need of snow shoveling assistance, there is a dedicated venue in which to make that need known and fulfilled.
+- If you have a desire to help others in your community, providing snow shoveling assistance is a clear and present option.
 
-### `npm start`
+There is no business model here. If this becomes something more than code on a Git repository, the intention is to run the service as a non-profit via donations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+All services are containerized using Docker. If you haven't installed Docker already, please follow the instructions [here](https://docs.docker.com/engine/install/) before proceeding.
 
-### `npm test`
+To bring up Shoveler, simply execute the following command from the top-level directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+docker-compose up -d
+```
 
-### `npm run build`
+The web page can be accessed by going to your browser and navigating to [http://localhost:3001](http://localhost:3001). To access the backend service directly, make HTTP requests to [http://localhost:8081](http://localhost:8081). If these ports are already in use on your system, feel free to update the port mapping in `docker-compose.yml` to meet your needs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When you're ready to bring Shoveler down, execute the following command from the top-level directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+docker-compose down
+```
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+At the time of writing, Shoveler has not been deployed to the public Internet.

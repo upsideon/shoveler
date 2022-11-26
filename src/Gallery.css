@@ -1,0 +1,11 @@
+.gallery-panel {
+  display: inline-block;
+  width: 300px;
+  padding: 10px;
+}
+
+.gallery-image {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+}

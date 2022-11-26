@@ -1,38 +1,188 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(217 217 217 / 70%);
+  padding-top: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button:hover {
+  cursor: pointer;
+}
+
+.cancel-button {
   color: white;
+  background-color: #ff8566;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  grid-column: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.cancel-button:hover {
+  background-color: #ff9980;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-button {
+  color: white;
+  background-color: #00b8e6;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  grid-column: 2;
+}
+
+.submit-button:hover {
+  background-color: #0cf;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-rows: 50px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  left: 63%;
+  top: 11%;
+  font-size: 40px;
+  font-weight: bold;
+  color: #69f;
+}
+
+.close:hover {
+  color: #9bf;
+  cursor: pointer;
+}
+
+.modal-content {
+  margin: 5% auto 15%;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 26%;
+}
+
+.container {
+  padding: 16px;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.footer-hr {
+  border: 1px solid grey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  float: left;
+  margin: 5px;
+}
+
+.center {
+  height: 10%;
+  width: 100%;
+  position: relative;
+}
+
+.center-image {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.navigation {
+  height: 70px;
+}
+
+.title {
+  display: inline-block;
+  margin-left: 15px;
+  float: left;
+  padding: 5px;
+  height: 60px;
+  width: 250px;
+}
+
+.font-family {
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+.description-font {
+  color: #595959;
+}
+
+.slogan-emphasis {
+  color: black;
+  font-weight: bold;
+}
+
+.slogan-sub {
+  font-style: oblique;
+}
+
+body {
+  background-color: #eff5f5;
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+.sign-in-button {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 5px solid #0073e6;
+  color: white;
+  background-color: #00b8e6;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px 32px;
+}
+
+.sign-in-button:hover {
+  margin-top: 17px;
+  margin-bottom: 16px;
+  border-bottom-width: 3px;
+  cursor: pointer;
+}
+
+.sign-in-button:active {
+  margin-top: 20px;
+  border-bottom-width: 0;
 }

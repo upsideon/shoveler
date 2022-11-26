@@ -1,6 +1,11 @@
 version: '3.9'
 
 services:
+  shoveler-backend:
+    container_name: shoveler-backend
+    build: ./backend
+    ports:
+      - 8080:8080
   shoveler-frontend:
     container_name: shoveler-frontend
     build:

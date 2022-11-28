@@ -29,13 +29,21 @@ func initializeRouter(db gocqlx.Session) *gin.Engine {
 		Database: db,
 	}
 
+	beaconController := routes.BeaconController{
+		Database: db,
+	}
+
 	loginController := routes.LoginController{
 		Database: db,
 	}
 
+	authorization := middleware.Authorization()
+
 	router := gin.Default()
 	router.POST("/accounts", accountController.Create)
 	router.POST("/login", loginController.Login)
+	router.POST("/beacons", authorization, beaconController.Create)
+	router.GET("/beacons", authorization, beaconController.List)
 	router.GET("/test", middleware.Authorization(), func(ctx *gin.Context) {})
 	return router
 }

@@ -9,9 +9,11 @@ import (
 
 func Authorization() gin.HandlerFunc {
 	return func(context *gin.Context) {
-		if err := auth.VerifyToken(context); err != nil {
+		if token, err := auth.ParseToken(context); err != nil {
 			context.AbortWithStatusJSON(http.StatusForbidden, gin.H{"message": err.Error()})
+		} else {
+			context.Set("token", token)
+			context.Next()
 		}
-		context.Next()
 	}
 }

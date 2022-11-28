@@ -15,7 +15,7 @@ func GenerateToken(id string) (string, error) {
 	token := jwt.New(jwt.SigningMethodHS256)
 	claims := token.Claims.(jwt.MapClaims)
 
-	claims["id"] = id
+	claims["sub"] = id
 	claims["exp"] = time.Now().Add(time.Minute * 30).Unix()
 
 	tokenString, err := token.SignedString([]byte(os.Getenv("JWT_SIGNING_SECRET")))
@@ -23,14 +23,6 @@ func GenerateToken(id string) (string, error) {
 		return "", err
 	}
 	return tokenString, nil
-}
-
-func VerifyToken(context *gin.Context) error {
-	_, err := ParseToken(context)
-	if err != nil {
-		return err
-	}
-	return nil
 }
 
 func RetrieveToken(context *gin.Context) (string, error) {

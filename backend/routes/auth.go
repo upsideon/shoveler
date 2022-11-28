@@ -36,7 +36,7 @@ func (c *LoginController) Login(context *gin.Context) {
 
 	selectAccount := qb.Select(
 		"shoveler.accounts",
-	).Columns("password_hash").Where(qb.Eq("email")).Query(c.Database).BindStruct(
+	).Columns("id", "password_hash").Where(qb.Eq("email")).Query(c.Database).BindStruct(
 		account,
 	)
 
@@ -64,6 +64,7 @@ func (c *LoginController) Login(context *gin.Context) {
 		context.String(http.StatusInternalServerError, "Internal Server Error")
 		return
 	}
+
 	token, err := auth.GenerateToken(account.Id)
 
 	if err != nil {

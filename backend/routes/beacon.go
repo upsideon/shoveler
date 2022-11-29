@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"encoding/json"
 	"errors"
 	"log"
 	"net/http"
@@ -21,10 +22,10 @@ var beaconsMetadata = table.Metadata{
 var beaconsTable = table.New(beaconsMetadata)
 
 type Beacon struct {
-	Id       string
-	OwnerId  string
-	HelperId string
-	Address  string
+	Id       string `json:"id"`
+	OwnerId  string `json:"owner_id"`
+	HelperId string `json:"helper_id"`
+	Address  string `json:"address"`
 }
 
 type BeaconCreationRequest struct {
@@ -89,4 +90,45 @@ func (c *BeaconController) Create(context *gin.Context) {
 }
 
 func (c *BeaconController) List(context *gin.Context) {
+	token, exists := context.Get("token")
+	if !exists {
+		context.String(http.StatusForbidden, "Forbidden")
+		return
+	}
+
+	claims, ok := token.(*jwt.Token).Claims.(jwt.MapClaims)
+	if !ok {
+		log.Print(errors.New("Unable to access token claims."))
+		return
+	}
+
+	ownerId := claims["sub"].(string)
+
+	beacon := Beacon{
+		OwnerId: ownerId,
+	}
+
+	selectBeacons := qb.Select(
+		"shoveler.beacons",
+	).Columns(
+		"id", "owner_id", "helper_id", "address",
+	).Where(
+		qb.Eq("owner_id"),
+	).Query(c.Database).BindStruct(&beacon).Iter()
+
+	allBeacons := []Beacon{}
+
+	beacon = Beacon{}
+	for selectBeacons.StructScan(&beacon) {
+		allBeacons = append(allBeacons, beacon)
+	}
+
+	jsonBeacons, err := json.Marshal(allBeacons)
+	if err != nil {
+		log.Print(err)
+		context.String(http.StatusInternalServerError, "Internal Server Error")
+		return
+	}
+
+	context.JSON(http.StatusOK, string(jsonBeacons))
 }

@@ -28,7 +28,7 @@ type Account struct {
 type AccountCreationRequest struct {
 	Email           string `form:"email" json:"email" binding:"required"`
 	Password        string `form:"password" json:"password" binding:"required"`
-	PasswordConfirm string `form:"password-confirm" json:"password_confirm" binding:"required"`
+	PasswordConfirm string `form:"password_confirm" json:"password_confirm" binding:"required"`
 }
 
 type AccountController struct {

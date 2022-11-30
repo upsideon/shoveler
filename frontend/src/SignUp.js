@@ -29,10 +29,10 @@ function Password() {
 function PasswordConfirm() {
   return (
     <div>
-      <label htmlFor="password-confirm">
+      <label htmlFor="password_confirm">
         <b>Confirm Password</b>
       </label>
-      <input type="password" name="password-confirm" required />
+      <input type="password" name="password_confirm" required />
     </div>
   );
 }
@@ -96,9 +96,11 @@ SignIn.propTypes = {
 
 async function handleSignIn(event) {
   event.preventDefault();
+  const email = event.target.email.value;
+  const password = event.target.password.value;
   const response = await axios.post(
     `http://localhost:8080/login`,
-    {},
+    { email, password },
   );
 }
 
@@ -129,8 +131,15 @@ SignUp.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-function handleSignUp(event) {
+async function handleSignUp(event) {
   event.preventDefault();
+  const email = event.target.email.value;
+  const password = event.target.password.value;
+  const password_confirm = event.target.password_confirm.value;
+  const response = await axios.post(
+    `http://localhost:8080/accounts`,
+    { email, password, password_confirm },
+  );
 }
 
 export {

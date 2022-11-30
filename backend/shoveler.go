@@ -5,6 +5,7 @@ import (
 	"shoveler/middleware"
 	"shoveler/routes"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/gocql/gocql"
 	"github.com/scylladb/gocqlx/v2"
@@ -40,6 +41,15 @@ func initializeRouter(db gocqlx.Session) *gin.Engine {
 	authorization := middleware.Authorization()
 
 	router := gin.Default()
+
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:3001"},
+		AllowMethods:     []string{"GET", "POST", "PUT"},
+		AllowHeaders:     []string{"Origin", "Content-Type"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
+
 	router.POST("/accounts", accountController.Create)
 	router.POST("/login", loginController.Login)
 	router.POST("/beacons", authorization, beaconController.Create)

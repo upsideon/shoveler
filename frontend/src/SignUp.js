@@ -1,6 +1,9 @@
 import { React } from 'react';
 import PropTypes from 'prop-types';
 
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
+
 function Email() {
   return (
     <div>
@@ -91,8 +94,12 @@ SignIn.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-function handleSignIn(event) {
+async function handleSignIn(event) {
   event.preventDefault();
+  const response = await axios.post(
+    `http://localhost:8080/login`,
+    {},
+  );
 }
 
 function SignUp(props) {

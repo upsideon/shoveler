@@ -1,8 +1,8 @@
-import { React } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  SignIn, SignUp, handleSignIn, handleSignUp,
+  SignIn, SignUp, handleSignUp,
 } from './SignUp';
 
 function AccountButton(props) {
@@ -43,7 +43,7 @@ function Navigation() {
       <img src="images/shoveler_logo.png" className="title" alt="Shoveler logo." />
       <AccountButton text="Sign In" onClick={openModalClick('signInModal')} />
       <AccountButton text="Create Account" onClick={openModalClick('signUpModal')} />
-      <SignIn closeOnClick={closeModalClick('signInModal')} onSubmit={handleSignIn} />
+      <SignIn closeOnClick={closeModalClick('signInModal')} />
       <SignUp closeOnClick={closeModalClick('signUpModal')} onSubmit={handleSignUp} />
     </div>
   );

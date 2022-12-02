@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 
 import Center from './Center';
 import Footer from './Footer';

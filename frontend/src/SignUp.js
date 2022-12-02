@@ -1,8 +1,10 @@
-import { React } from 'react';
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
+import {StatusCodes as HttpStatus} from 'http-status-codes';
 
 function Email() {
   return (
@@ -69,40 +71,57 @@ PopUpModal.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-function SignIn(props) {
-  const { closeOnClick, onSubmit } = props;
-  return (
-    <PopUpModal id="signInModal" closeOnClick={closeOnClick}>
-      <form className="modal-content" onSubmit={onSubmit}>
-        <div className="container">
-          <div>
-            <h1>Sign In</h1>
-            <p> Your shoveling buddy is waiting for you! </p>
-            <hr />
-            <Email />
-            <Password />
-            <SubmitAndCancel closeOnClick={closeOnClick} />
+class SignIn extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.state = { isLoggedIn: false };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const response = await axios.post(
+      `http://localhost:8080/login`,
+      { email, password },
+    );
+
+    if (response.status === HttpStatus.OK) {
+      this.setState({ isLoggedIn: true });
+    }
+  }
+
+  render() {
+    if (this.state.isLoggedIn) {
+      return <Navigate to='/dashboard' replace />;
+    }
+
+    const { closeOnClick } = this.props;
+
+    return (
+      <PopUpModal id="signInModal" closeOnClick={closeOnClick}>
+        <form className="modal-content" onSubmit={this.handleSubmit}>
+          <div className="container">
+            <div>
+              <h1>Sign In</h1>
+              <p> Your shoveling buddy is waiting for you! </p>
+              <hr />
+              <Email />
+              <Password />
+              <SubmitAndCancel closeOnClick={closeOnClick} />
+            </div>
           </div>
-        </div>
-      </form>
-    </PopUpModal>
-  );
+        </form>
+      </PopUpModal>
+    );
+  }
 }
 
 SignIn.propTypes = {
   closeOnClick: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 };
-
-async function handleSignIn(event) {
-  event.preventDefault();
-  const email = event.target.email.value;
-  const password = event.target.password.value;
-  const response = await axios.post(
-    `http://localhost:8080/login`,
-    { email, password },
-  );
-}
 
 function SignUp(props) {
   const { closeOnClick, onSubmit } = props;
@@ -143,5 +162,5 @@ async function handleSignUp(event) {
 }
 
 export {
-  SignIn, SignUp, handleSignIn, handleSignUp,
+  SignIn, SignUp, handleSignUp,
 };

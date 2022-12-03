@@ -1,0 +1,24 @@
+.dashboard-header {
+  padding-left: 20px;
+}
+
+.beacon-sections {
+  padding-left: 30px;
+}
+
+.add-button {
+  display: inline;
+}
+
+.add-description {
+  display: inline;
+  padding-left: 10px;
+}
+
+h1,h2 {
+  color: #00b8e6;
+}
+
+hr {
+  border: 1px solid grey;
+}

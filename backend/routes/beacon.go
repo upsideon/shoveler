@@ -2,12 +2,10 @@ package routes
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"
 	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/qb"
@@ -39,21 +37,15 @@ type BeaconController struct {
 func (c *BeaconController) Create(context *gin.Context) {
 	var creationRequest BeaconCreationRequest
 
-	if err := context.BindJSON(&creationRequest); err != nil {
-		log.Print(err)
-		context.String(http.StatusBadRequest, "Bad Request")
-		return
-	}
-
-	token, exists := context.Get("token")
+	ownerId, exists := context.Get("accountId")
 	if !exists {
 		context.String(http.StatusForbidden, "Forbidden")
 		return
 	}
 
-	claims, ok := token.(*jwt.Token).Claims.(jwt.MapClaims)
-	if !ok {
-		log.Print(errors.New("Unable to access token claims."))
+	if err := context.BindJSON(&creationRequest); err != nil {
+		log.Print(err)
+		context.String(http.StatusBadRequest, "Bad Request")
 		return
 	}
 
@@ -64,14 +56,10 @@ func (c *BeaconController) Create(context *gin.Context) {
 		return
 	}
 
-	address := creationRequest.Address
-	log.Print(claims)
-	ownerId := claims["sub"].(string)
-
 	beacon := Beacon{
 		Id:      id.String(),
-		Address: address,
-		OwnerId: ownerId,
+		Address: creationRequest.Address,
+		OwnerId: ownerId.(string),
 	}
 
 	insertBeacon := qb.Insert(
@@ -90,22 +78,14 @@ func (c *BeaconController) Create(context *gin.Context) {
 }
 
 func (c *BeaconController) List(context *gin.Context) {
-	token, exists := context.Get("token")
+	ownerId, exists := context.Get("accountId")
 	if !exists {
 		context.String(http.StatusForbidden, "Forbidden")
 		return
 	}
 
-	claims, ok := token.(*jwt.Token).Claims.(jwt.MapClaims)
-	if !ok {
-		log.Print(errors.New("Unable to access token claims."))
-		return
-	}
-
-	ownerId := claims["sub"].(string)
-
 	beacon := Beacon{
-		OwnerId: ownerId,
+		OwnerId: ownerId.(string),
 	}
 
 	selectBeacons := qb.Select(
@@ -131,4 +111,35 @@ func (c *BeaconController) List(context *gin.Context) {
 	}
 
 	context.JSON(http.StatusOK, string(jsonBeacons))
+}
+
+func (c *BeaconController) Delete(context *gin.Context) {
+	ownerId, exists := context.Get("accountId")
+	if !exists {
+		context.String(http.StatusForbidden, "Forbidden")
+		return
+	}
+
+	beacon := Beacon{
+		Id:      context.Param("id"),
+		OwnerId: ownerId.(string),
+	}
+
+	// TODO - It's troublesome that Cassandra doesn't allow us to include a
+	// filter on owner_id as well for deletes. This means that, as of now,
+	// if someone obtains an ID for a beacon that they can delete it without
+	// being the owner. A solution for this must be determined.
+	deleteBeacon := qb.Delete(
+		"shoveler.beacons",
+	).Where(
+		qb.Eq("id"),
+	).Query(c.Database).BindStruct(&beacon)
+
+	if err := deleteBeacon.ExecRelease(); err != nil {
+		log.Print(err)
+		context.String(http.StatusInternalServerError, "Internal Server Error")
+		return
+	}
+
+	context.String(http.StatusOK, "OK")
 }

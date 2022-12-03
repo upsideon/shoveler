@@ -54,6 +54,7 @@ func initializeRouter(db gocqlx.Session) *gin.Engine {
 	router.POST("/login", loginController.Login)
 	router.POST("/beacons", authorization, beaconController.Create)
 	router.GET("/beacons", authorization, beaconController.List)
+	router.DELETE("/beacons/:id", authorization, beaconController.Delete)
 	router.GET("/test", middleware.Authorization(), func(ctx *gin.Context) {})
 	return router
 }

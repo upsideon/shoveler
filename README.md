@@ -13,11 +13,21 @@ There is no business model here. If this becomes something more than code on a G
 
 All services are containerized using Docker. If you haven't installed Docker already, please follow the instructions [here](https://docs.docker.com/engine/install/) before proceeding.
 
-To bring up Shoveler, simply execute the following command from the top-level directory:
+If it is your first time running Shoveler, execute the following commands from the top-level directory to bring it up:
 
 ```
-docker-compose up -d
+docker-compose up -d cassandra
+docker exec -i shoveler_cassandra_1 cqlsh < database/migrations.cql
+docker-compose up -d shoveler-frontend shoveler-backend
 ```
+
+On subsequent runs, as long as you don't remove the Cassandra container, you can execute the following commands to bring up Shoveler:
+
+```
+docker-compose up -d cassandra && sleep 60 && docker-compose up --build
+```
+
+The sleep command gives the Cassandra database enough time to come up before the Shoveler backend attempts to access it. In the future, either intelligent retries by the backend or health checks to support `depends_on` in `docker-compose.yml` will be added to address this problem.
 
 The web page can be accessed by going to your browser and navigating to [http://localhost:3001](http://localhost:3001). To access the backend service directly, make HTTP requests to [http://localhost:8081](http://localhost:8081). If these ports are already in use on your system, feel free to update the port mapping in `docker-compose.yml` to meet your needs.
 

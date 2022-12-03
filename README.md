@@ -21,12 +21,18 @@ docker-compose up -d
 
 The web page can be accessed by going to your browser and navigating to [http://localhost:3001](http://localhost:3001). To access the backend service directly, make HTTP requests to [http://localhost:8081](http://localhost:8081). If these ports are already in use on your system, feel free to update the port mapping in `docker-compose.yml` to meet your needs.
 
-When you're ready to bring Shoveler down, execute the following command from the top-level directory:
+When you're ready to stop Shoveler, execute the following command from the top-level directory:
 
 ```
-docker-compose down
+docker-compose stop
 ```
 
-### Deployment
+### Deploying Container Images
 
-At the time of writing, Shoveler has not been deployed to the public Internet.
+To deploy container images to DockerHub for the frontend and backend services, first add the following environment variable export to the configuration script for your favorite shell. An example for Bash is provided below:
+
+```
+echo "export SHOVELER_DOCKERHUB_REPO=<dockerhub-repo>" >> ~/.bashrc
+```
+
+Then execute `dockerhub-push.sh` build the images and push them up to DockerHub.

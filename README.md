@@ -29,7 +29,7 @@ docker-compose up -d cassandra && sleep 60 && docker-compose up --build
 
 The sleep command gives the Cassandra database enough time to come up before the Shoveler backend attempts to access it. In the future, either intelligent retries by the backend or health checks to support `depends_on` in `docker-compose.yml` will be added to address this problem.
 
-The web page can be accessed by going to your browser and navigating to [http://localhost:3001](http://localhost:3001). To access the backend service directly, make HTTP requests to [http://localhost:8081](http://localhost:8081). If these ports are already in use on your system, feel free to update the port mapping in `docker-compose.yml` to meet your needs.
+The web page can be accessed by going to your browser and navigating to [http://localhost:3000](http://localhost:3000). To access the backend service directly, make HTTP requests to [http://localhost:8080](http://localhost:8080). If these ports are already in use on your system, feel free to update the port mapping in `docker-compose.yml` to meet your needs.
 
 When you're ready to stop Shoveler, execute the following command from the top-level directory:
 

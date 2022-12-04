@@ -13,28 +13,37 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-import {jwtStore} from './SignUp';
+import {StatusCodes as HttpStatus} from 'http-status-codes';
+import { getHeaders } from './SignUp';
 
-function Beacon(props) {
-  return (
-    <ListItem
-      divider
-      secondaryAction={
-        props.removable ? 
-          <IconButton>
-            <RemoveCircleOutlineIcon/>
-          </IconButton> :
-          <Checkbox />
-      }
-    >
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar />
-        </ListItemAvatar>
-        <ListItemText primary={props.address} />
-      </ListItemButton>
-    </ListItem>
-  );
+class Beacon extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
+
+  render() {
+    const props = this.props;
+    return (
+      <ListItem
+        divider
+        secondaryAction={
+          props.removable ?
+            <IconButton onClick={props.deleteOnClick}>
+              <RemoveCircleOutlineIcon/>
+            </IconButton> :
+            <Checkbox />
+        }
+      >
+        <ListItemButton>
+          <ListItemAvatar>
+            <Avatar />
+          </ListItemAvatar>
+          <ListItemText primary={props.address} />
+        </ListItemButton>
+      </ListItem>
+    );
+  }
 }
 
 class AddBeacon extends React.Component {
@@ -44,17 +53,31 @@ class AddBeacon extends React.Component {
     this.state = {
       beacons: [],
     };
+    this.deleteOnClick = this.deleteOnClick.bind(this);
   }
 
   async componentDidMount () {
-    const token = jwtStore.getState().token.payload;
-    const bearer = `Bearer ${token}`;
     const response = await axios.get(
       'http://localhost:8080/beacons',
-      { headers: { 'Authorization': bearer } },
+      getHeaders(),
     );
     const beacons = JSON.parse(response.data);
     this.setState({ beacons });
+  }
+
+  deleteOnClick(id) {
+    return async () => {
+      const response = await axios.delete(
+        `http://localhost:8080/beacons/${id}`,
+        getHeaders(),
+      );
+
+      if (response.status === HttpStatus.OK) {
+        this.setState({
+          beacons: this.state.beacons.filter(b => b.id !== id),
+        });
+      }
+    };
   }
 
   render() {
@@ -68,7 +91,16 @@ class AddBeacon extends React.Component {
           <p className="add-description">If you are looking for help, add a beacon here.</p>
         </div>
         {
-          this.state.beacons.map(beacon => <Beacon address={beacon.address} removable />)
+          this.state.beacons.map(beacon => {
+            const id = beacon.id;
+            return <Beacon
+              address={beacon.address}
+              deleteOnClick={this.deleteOnClick(id)}
+              id={id}
+              key={id}
+              removable
+            />
+          })
         }
       </div>
     );

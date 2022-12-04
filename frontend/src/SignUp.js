@@ -84,13 +84,17 @@ const jwtSlice = createSlice({
   }
 });
 
-export const { added } = jwtSlice.actions;
+const { added } = jwtSlice.actions;
 
-const store = configureStore({
+const jwtStore = configureStore({
   reducer: jwtSlice.reducer,
 });
 
-export const jwtStore = store;
+function getHeaders() {
+  const token = jwtStore.getState().token.payload;
+  const bearer = `Bearer ${token}`;
+  return { headers: { 'Authorization': bearer } };
+}
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -111,7 +115,7 @@ class SignIn extends React.Component {
 
     if (response.status === HttpStatus.OK) {
       this.setState({ isLoggedIn: true });
-      store.dispatch(added(response.data.token));
+      jwtStore.dispatch(added(response.data.token));
     }
   }
 
@@ -184,5 +188,5 @@ async function handleSignUp(event) {
 }
 
 export {
-  SignIn, SignUp, handleSignUp,
+  SignIn, SignUp, handleSignUp, getHeaders,
 };

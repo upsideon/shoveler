@@ -5,8 +5,7 @@ function Footer() {
     <div>
       <hr className="footer-hr" />
       <h4>
-        Shoveler
-        {new Date().getFullYear()}
+        Shoveler&nbsp;{new Date().getFullYear()}
       </h4>
     </div>
   );

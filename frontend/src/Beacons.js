@@ -99,7 +99,7 @@ class AddBeaconForm extends React.Component {
         </DialogContent>
         <DialogActions>
           <Button onClick={this.handleClose}>Cancel</Button>
-          <Button onClick={this.handleSubmit}>Subscribe</Button>
+          <Button onClick={this.handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     );

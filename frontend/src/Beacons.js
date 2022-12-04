@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 
 import AddIcon from '@mui/icons-material/Add';
@@ -11,6 +12,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+
+import {jwtStore} from './SignUp';
 
 function Beacon(props) {
   return (
@@ -34,20 +37,42 @@ function Beacon(props) {
   );
 }
 
-function AddBeacon() {
-  return (
-    <div className="beacon-sections add-beacon">
-      <h2>Add a Beacon</h2>
-      <div className="add-beacon-subheader">
-        <Fab className="add-button" color="primary" aria-label="add">
-          <AddIcon />
-        </Fab>
-        <p className="add-description">If you are looking for help, add a beacon here.</p>
+class AddBeacon extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.state = {
+      beacons: [],
+    };
+  }
+
+  async componentDidMount () {
+    const token = jwtStore.getState().token.payload;
+    const bearer = `Bearer ${token}`;
+    const response = await axios.get(
+      'http://localhost:8080/beacons',
+      { headers: { 'Authorization': bearer } },
+    );
+    const beacons = JSON.parse(response.data);
+    this.setState({ beacons });
+  }
+
+  render() {
+    return (
+      <div className="beacon-sections add-beacon">
+        <h2>Add a Beacon</h2>
+        <div className="add-beacon-subheader">
+          <Fab className="add-button" color="primary" aria-label="add">
+            <AddIcon />
+          </Fab>
+          <p className="add-description">If you are looking for help, add a beacon here.</p>
+        </div>
+        {
+          this.state.beacons.map(beacon => <Beacon address={beacon.address} removable />)
+        }
       </div>
-      <Beacon address="30 Rockefeller Plaza, New York, NY" removable />
-      <Beacon address="1600 Pennsylvania Avenue NW, Washington, DC 20500" removable />
-    </div>
-  );
+    );
+  }
 }
 
 function FindBeacon() {

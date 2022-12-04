@@ -44,8 +44,8 @@ func initializeRouter(db gocqlx.Session) *gin.Engine {
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:3000"},
-		AllowMethods:     []string{"GET", "POST", "PUT"},
-		AllowHeaders:     []string{"Origin", "Content-Type"},
+		AllowMethods:     []string{"DELETE", "GET", "OPTIONS", "POST", "PUT"},
+		AllowHeaders:     []string{"Authorization", "Content-Type", "Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
@@ -71,6 +72,26 @@ PopUpModal.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
+const jwtSlice = createSlice({
+  name: 'jwt',
+  initialState: {
+    token: '',
+  },
+  reducers: {
+    added: (state, token) => {
+      state.token = token
+    },
+  }
+});
+
+export const { added } = jwtSlice.actions;
+
+const store = configureStore({
+  reducer: jwtSlice.reducer,
+});
+
+export const jwtStore = store;
+
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
@@ -84,12 +105,13 @@ class SignIn extends React.Component {
     const email = event.target.email.value;
     const password = event.target.password.value;
     const response = await axios.post(
-      `http://localhost:8080/login`,
+      'http://localhost:8080/login',
       { email, password },
     );
 
     if (response.status === HttpStatus.OK) {
       this.setState({ isLoggedIn: true });
+      store.dispatch(added(response.data.token));
     }
   }
 

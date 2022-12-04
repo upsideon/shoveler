@@ -7,6 +7,8 @@ import 'regenerator-runtime/runtime';
 import axios from 'axios';
 import {StatusCodes as HttpStatus} from 'http-status-codes';
 
+import PopUpModal from './PopUpModal';
+
 function Email() {
   return (
     <div>
@@ -52,24 +54,6 @@ function SubmitAndCancel(props) {
 
 SubmitAndCancel.propTypes = {
   closeOnClick: PropTypes.func.isRequired,
-};
-
-function PopUpModal(props) {
-  const { children, closeOnClick, id } = props;
-  return (
-    <div className="modal" id={id}>
-      <span className="close" onClick={closeOnClick} title="Close">
-        &times;
-      </span>
-      {children}
-    </div>
-  );
-}
-
-PopUpModal.propTypes = {
-  children: PropTypes.object.isRequired,
-  closeOnClick: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
 };
 
 const jwtSlice = createSlice({

@@ -1,0 +1,3269 @@
+{
+  "vulnerabilities": [
+    {
+      "external_id": "GHSA-gwc9-m7rh-j2ww",
+      "cve_id": "",
+      "identifiers": {
+        "cve_id": [
+          ""
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://github.com/advisories/GHSA-gwc9-m7rh-j2ww",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/crypto"
+              },
+              "versions": [
+                "v0.0.0-20210711020723-a769d52b0f97"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://go.dev/cl/368814/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issues/49932",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/2AR1sKiM-Qs",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-0968",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "Unauthenticated clients can cause a panic in SSH servers.\n\nWhen using AES-GCM or ChaCha20Poly1305, consuming a malformed packet which contains an empty plaintext causes a panic.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "engine": "trivy"
+      },
+      "severity": {
+        "data": "UNKNOWN",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "UNKNOWN",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "record_id": "rkvr.2IW0cLyyIWhlZjoU0IRChfFg7Bd",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/crypto"
+          },
+          "versions": [
+            "v0.0.0-20210711020723-a769d52b0f97"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "GHSA-8c26-wmh5-6g9v",
+      "cve_id": "",
+      "identifiers": {
+        "cve_id": [
+          ""
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://github.com/advisories/GHSA-8c26-wmh5-6g9v",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/crypto"
+              },
+              "versions": [
+                "v0.0.0-20210711020723-a769d52b0f97"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://go.dev/cl/392355",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.googlesource.com/crypto/+/1baeb1ce4c0b006eff0f294c47cb7617598dfb3d",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/-cp44ypCT5s",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2021-0356",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "Attackers can cause a crash in SSH servers when the server has been configured by passing a Signer to ServerConfig.AddHostKey such that 1) the Signer passed to AddHostKey does not implement AlgorithmSigner, and 2) the Signer passed to AddHostKey returns a key of type “ssh-rsa” from its PublicKey method.\n\nServers that only use Signer implementations provided by the ssh package are unaffected.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "engine": "trivy"
+      },
+      "severity": {
+        "data": "UNKNOWN",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "UNKNOWN",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "record_id": "rkvr.2IW0cH9J6pUQXw3YvnrIHR50AyZ",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/crypto"
+          },
+          "versions": [
+            "v0.0.0-20210711020723-a769d52b0f97"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "GHSA-69ch-w2m2-3vjp",
+      "cve_id": "",
+      "identifiers": {
+        "cve_id": [
+          ""
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://github.com/advisories/GHSA-69ch-w2m2-3vjp",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/text"
+              },
+              "versions": [
+                "v0.3.6"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://go.dev/cl/442235",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/56152",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/-hjNw559_tE/m/KlGTfid5CAAJ",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-1059",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "An attacker may cause a denial of service by crafting an Accept-Language header which ParseAcceptLanguage will take significant time to parse.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "engine": "trivy"
+      },
+      "severity": {
+        "data": "UNKNOWN",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "UNKNOWN",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "record_id": "rkvr.2IW0cKSpLr42FM6jmU1qHAk63CT",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/text"
+          },
+          "versions": [
+            "v0.3.6"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2022-32149",
+      "cve_id": "CVE-2022-32149",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2022-32149"
+        ],
+        "cwe": [
+          "CWE-772"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2022-32149",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/text"
+              },
+              "versions": [
+                "v0.3.6"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-32149",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/advisories/GHSA-69ch-w2m2-3vjp",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/go/issues/56152",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/text/commit/434eadcdbc3b0256971992e8c70027278364c72c",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/442235",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/56152",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/-hjNw559_tE/m/KlGTfid5CAAJ",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-dev/c/qfPIly0X7aU",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32149",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-1059",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "An attacker may cause a denial of service by crafting an Accept-Language header which ParseAcceptLanguage will take significant time to parse.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: golang.org/x/text/language: ParseAcceptLanguage takes a long time to parse complex tags",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "redhat",
+          "nvd"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 7.5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2022-10-14T15:15:00Z",
+      "record_id": "rkvr.2IW0cIYJWbJJd4Cp5QqighuGdtR",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/text"
+          },
+          "versions": [
+            "v0.3.6"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2022-29526",
+      "cve_id": "CVE-2022-29526",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2022-29526"
+        ],
+        "cwe": [
+          "CWE-269"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2022-29526",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/sys"
+              },
+              "versions": [
+                "v0.0.0-20210806184541-e5e7981a1069"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-29526",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/go/issues/52313",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/399539",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/400074",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/52313",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/Y5qrqw_lWdU",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-29526.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-5337.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Q6GE5EQGE4L2KRVGW4T75QVIYAXCLO5X/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RQXU752ALW53OJAF5MG3WMR5CCZVLWW6/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z55VUVGO7E5PJFXIOVAY373NZRHBNCI5/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZY2SLWOQR4ZURQ7UBRZ7JIX6H6F5JHJR/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-0493",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202208-02",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220729-0001/",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "Go before 1.17.10 and 1.18.x before 1.18.2 has Incorrect Privilege Assignment. When called with a non-zero flags parameter, the Faccessat function could incorrectly report that a file is accessible.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: syscall: faccessat checks wrong group",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 6.2,
+        "sources": [
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "2",
+          "context": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "data": 5.3,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        {
+          "data": 6.2,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "MEDIUM",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "MEDIUM",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2022-06-23T17:15:00Z",
+      "record_id": "rkvr.2IW0cJELi3FXxVlHyM0ZvAR9RH7",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/sys"
+          },
+          "versions": [
+            "v0.0.0-20210806184541-e5e7981a1069"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2022-27664",
+      "cve_id": "CVE-2022-27664",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2022-27664"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2022-27664",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/net"
+              },
+              "versions": [
+                "v0.0.0-20210226172049-e18ecbb05110"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:7129",
+          "type": "advisory"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-27664.json",
+          "type": "advisory"
+        },
+        {
+          "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32189.json",
+          "type": "advisory"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27664",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/1913333",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/1913338",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2107371",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2107374",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2107383",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2107386",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2107388",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2113814",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2124669",
+          "type": "advisory"
+        },
+        {
+          "url": "https://errata.almalinux.org/8/ALSA-2022-7129.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/428735",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/54658",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/x49AQzIVX-s",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/x49AQzIVX-s/m/0tgO0pjiBQAJ",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-27664.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-7129.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXKTHIGE5F576MAPFYCIJXNRGBSPISUF/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TXS2OQ57KZC5XZKK5UW4SYKPVQAHIOJX/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-27664",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-0969",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202209-26",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220923-0004/",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "In net/http in Go before 1.18.6 and 1.19.x before 1.19.1, attackers can cause a denial of service because an HTTP/2 connection can hang during closing if shutdown were preempted by a fatal error.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: net/http: handle server errors after sending GOAWAY",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "nvd",
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 7.5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2022-09-06T18:15:00Z",
+      "record_id": "rkvr.2IW0cLqbX3rU3ZQf1FjBH3sNsuN",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/net"
+          },
+          "versions": [
+            "v0.0.0-20210226172049-e18ecbb05110"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2022-27191",
+      "cve_id": "CVE-2022-27191",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2022-27191"
+        ],
+        "cwe": [
+          "CWE-327"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2022-27191",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/crypto"
+              },
+              "versions": [
+                "v0.0.0-20210711020723-a769d52b0f97"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2022:8008",
+          "type": "advisory"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27191",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/1939485",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/1989564",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/1989570",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/1989575",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2064702",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2121445",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/2121453",
+          "type": "advisory"
+        },
+        {
+          "url": "https://errata.almalinux.org/9/ALSA-2022-8008.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/advisories/GHSA-8c26-wmh5-6g9v",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/392355",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.googlesource.com/crypto/+/1baeb1ce4c0b006eff0f294c47cb7617598dfb3d",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/-cp44ypCT5s",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/-cp44ypCT5s/m/wmegxkLiAQAJ",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2022-27191.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-8008.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DLUJZV3HBP56ADXU6QH2V7RNYUPMVBXQ/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EZ3S7LB65N54HXXBCB67P4TTOHTNPP5O/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HHGBEGJ54DZZGTXFUQNS7ZIG3E624YAF/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J5WPM42UR6XIBQNQPNQHM32X7S4LJTRX/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QTFOIDHQRGNI4P6LYN6ILH5G443RYYKB/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RQXU752ALW53OJAF5MG3WMR5CCZVLWW6/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YHYRQB7TRMHDB3NEHW5XBRG7PPMUTPGV/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z55VUVGO7E5PJFXIOVAY373NZRHBNCI5/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZFUNHFHQVJSADNH7EZ3B53CYDZVEEPBP/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZQNPPQWSTP2IX7SHE6TS4SP4EVMI5EZK/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZY2SLWOQR4ZURQ7UBRZ7JIX6H6F5JHJR/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-27191",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2021-0356",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220429-0002/",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "The golang.org/x/crypto/ssh package before 0.0.0-20220314234659-1baeb1ce4c0b for Go allows an attacker to crash a server in certain circumstances involving AddHostKey.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: crash in a golang.org/x/crypto/ssh server",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "nvd",
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 4.3,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "2",
+          "context": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "data": 7.5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2022-03-18T07:15:00Z",
+      "record_id": "rkvr.2IW0cLAJGD6D6324RurKLYaA3Hw",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/crypto"
+          },
+          "versions": [
+            "v0.0.0-20210711020723-a769d52b0f97"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2021-44716",
+      "cve_id": "CVE-2021-44716",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2021-44716"
+        ],
+        "cwe": [
+          "CWE-400"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2021-44716",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/net"
+              },
+              "versions": [
+                "v0.0.0-20210226172049-e18ecbb05110"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-44716",
+          "type": "advisory"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44716",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/go/commit/48d948963c5ce7add72af5665a871caff6c1d35a (go1.17.5)",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/go/issues/50058",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/net/commit/491a49abca63de5e07ef554052d180a1b5fe2d70",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/369794",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/50058",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/hcmEScgc00k",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/hcmEScgc00k/m/ZWnOjeY4CQAJ",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-44716.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2022-0001.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2022/01/msg00016.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2022/01/msg00017.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44716",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-0288",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202208-02",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220121-0002/",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "net/http in Go before 1.16.12 and 1.17.x before 1.17.5 allows uncontrolled memory consumption in the header canonicalization cache via HTTP/2 requests.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: net/http: limit growth of header canonicalization cache",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "nvd",
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "2",
+          "context": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "data": 7.5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2022-01-01T05:15:00Z",
+      "record_id": "rkvr.2IW0cJv7EiRodavGQJ7saTRi3QY",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/net"
+          },
+          "versions": [
+            "v0.0.0-20210226172049-e18ecbb05110"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2021-43565",
+      "cve_id": "CVE-2021-43565",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2021-43565"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2021-43565",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/crypto"
+              },
+              "versions": [
+                "v0.0.0-20210711020723-a769d52b0f97"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-43565",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/advisories/GHSA-gwc9-m7rh-j2ww",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/368814/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issues/49932",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/forum/#!forum/golang-announce",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/2AR1sKiM-Qs",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-43565",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-0968",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "The x/crypto/ssh package before 0.0.0-20211202192323-5770296d904e of golang.org/x/crypto allows an attacker to panic an SSH server.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang.org/x/crypto: empty plaintext packet causes panic",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "nvd",
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 7.5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2022-09-06T18:15:00Z",
+      "record_id": "rkvr.2IW0cLpBebsMXFWtEjGHAVHf312",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/crypto"
+          },
+          "versions": [
+            "v0.0.0-20210711020723-a769d52b0f97"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2021-38561",
+      "cve_id": "CVE-2021-38561",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2021-38561"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2021-38561",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/text"
+              },
+              "versions": [
+                "v0.3.6"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-38561",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/340830",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.googlesource.com/text/+/383b2e75a7a4198c42f8f87833eefb772868a56f",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2021-0113",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "A flaw was found in golang. The language package for go language can panic due to an out-of-bounds read when an incorrectly formatted language tag is being parsed. This flaw allows an attacker to cause applications using this package to parse untrusted input data to crash, leading to a denial of service of the affected component.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: out-of-bounds read in golang.org/x/text/language leads to DoS",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "record_id": "rkvr.2IW0cFm2wpyvMd4RxXXJ23En5hD",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/text"
+          },
+          "versions": [
+            "v0.3.6"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2021-33194",
+      "cve_id": "CVE-2021-33194",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2021-33194"
+        ],
+        "cwe": [
+          "CWE-835"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2021-33194",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/net"
+              },
+              "versions": [
+                "v0.0.0-20210226172049-e18ecbb05110"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-33194",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/net/commit/37e1c6afe02340126705deced573a85ab75209d7",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/311090",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/46288",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.googlesource.com/net/+/37e1c6afe02340126705deced573a85ab75209d7",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/wPunbCPkWUg",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-dev/c/28x0nthP-c8/m/KqWVTjsnBAAJ",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4CHKSFMHZVOBCZSSVRE3UEYNKARTBMTM/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-33194",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2021-0238",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "golang.org/x/net before v0.0.0-20210520170846-37e1c6afe023 allows attackers to cause a denial of service (infinite loop) via crafted ParseFragment input.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: x/net/html: infinite loop in ParseFragment",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 7.5,
+        "sources": [
+          "redhat",
+          "nvd"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 7.5,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "2",
+          "context": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "data": 7.5,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2021-05-26T15:15:00Z",
+      "record_id": "rkvr.2IW0cK9j0QNAraNElRlQvvpI9Au",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/net"
+          },
+          "versions": [
+            "v0.0.0-20210226172049-e18ecbb05110"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2021-31525",
+      "cve_id": "CVE-2021-31525",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2021-31525"
+        ],
+        "cwe": [
+          "CWE-674"
+        ]
+      },
+      "engines": {
+        "trivy": {
+          "url": "https://avd.aquasec.com/nvd/cve-2021-31525",
+          "match_count": 1,
+          "affected": [
+            {
+              "package": {
+                "name": "golang.org/x/net"
+              },
+              "versions": [
+                "v0.0.0-20210226172049-e18ecbb05110"
+              ],
+              "match_count": 1
+            }
+          ],
+          "package_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-31525",
+          "type": "advisory"
+        },
+        {
+          "url": "https://github.com/golang/go/issues/45710",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/cl/313069",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.dev/issue/45710",
+          "type": "advisory"
+        },
+        {
+          "url": "https://go.googlesource.com/net/+/89ef3d95e781148a0951956029c92a211477f7f9",
+          "type": "advisory"
+        },
+        {
+          "url": "https://groups.google.com/g/golang-announce/c/cu9SP4eSXMc",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2021-31525.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2021-3076.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ISRZZ6NY5R2TBYE72KZFOCO25TEUQTBF/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31525",
+          "type": "advisory"
+        },
+        {
+          "url": "https://pkg.go.dev/vuln/GO-2022-0236",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202208-02",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "net/http in Go before 1.15.12 and 1.16.x before 1.16.4 allows remote attackers to cause a denial of service (panic) via a large header to ReadRequest or ReadResponse. Server, Transport, and Client can each be affected in some configurations.",
+        "engine": "trivy"
+      },
+      "summary": {
+        "data": "golang: net/http: panic in ReadRequest and ReadResponse when reading a very large header",
+        "engine": "trivy"
+      },
+      "score": {
+        "data": 5.9,
+        "sources": [
+          "nvd",
+          "redhat"
+        ],
+        "engines": [
+          "trivy"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 2.6,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "2",
+          "context": "AV:N/AC:H/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "data": 5.9,
+          "source": "nvd",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "data": 5.9,
+          "source": "redhat",
+          "engine": "trivy",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "MEDIUM",
+        "engines": [
+          "trivy"
+        ]
+      },
+      "severities": [
+        {
+          "data": "MEDIUM",
+          "engine": "trivy",
+          "source": ""
+        }
+      ],
+      "fix_state": "fixed",
+      "published": "2021-05-27T13:15:00Z",
+      "record_id": "rkvr.2IW0cKOe2ZwOluuIFWU5NslTHe2",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "golang.org/x/net"
+          },
+          "versions": [
+            "v0.0.0-20210226172049-e18ecbb05110"
+          ],
+          "match_count": 1
+        }
+      ],
+      "package_count": 1,
+      "locations": [
+        {
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2021-22570",
+      "cve_id": "CVE-2021-22570",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2021-22570"
+        ]
+      },
+      "engines": {
+        "grype": {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22570",
+          "match_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://github.com/protocolbuffers/protobuf/releases/tag/v3.15.0",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IFX6KPNOFHYD6L4XES5PCM3QNSKZBOTQ/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3DVUZPALAQ34TQP6KFNLM4IZS6B32XSA/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BTRGBRC5KGCA4SK5MUNLPYJRAGXMBIYY/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NVTWVQRB5OCCTMKEQFY5MYED3DXDVSLP/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5PAGL5M2KGYPN3VEQCRJJE6NA7D5YG5X/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KQJB6ZPRLKV6WCMX2PRRRQBFAOXFBK6B/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MRWRAXAFR3JR7XCFWTHC2KALSZKWACCE/",
+          "type": "advisory"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+          "type": "advisory"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20220429-0005/",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "Nullptr dereference when a null char is present in a proto symbol. The symbol is parsed incorrectly, leading to an unchecked call into the proto file's name during generation of the resulting error message. Since the symbol is incorrectly parsed, the file is nullptr. We recommend upgrading to version 3.15.0 or greater.",
+        "engine": "grype"
+      },
+      "summary": {
+        "data": "Nullptr dereference when a null char is present in a proto symbol. The symbol is parsed incorrectly, leading to an unchecked call into the proto file's name during generation of the resulting error message. Since the symbol is incorrectly parsed, the file is nullptr. We recommend upgrading to version 3.15.0 or greater.",
+        "engine": "grype"
+      },
+      "score": {
+        "data": 5.5,
+        "sources": [
+          "nvd:cpe"
+        ],
+        "engines": [
+          "grype"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "scores": [
+        {
+          "data": 2.1,
+          "source": "nvd:cpe",
+          "engine": "grype",
+          "type": "cvss",
+          "version": "2.0",
+          "context": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "data": 5.5,
+          "source": "nvd:cpe",
+          "engine": "grype",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "severity": {
+        "data": "MEDIUM",
+        "engines": [
+          "grype"
+        ],
+        "sources": [
+          "nvd:cpe"
+        ]
+      },
+      "severities": [
+        {
+          "data": "MEDIUM",
+          "engine": "grype",
+          "source": "nvd:cpe"
+        }
+      ],
+      "fix_state": "unknown",
+      "record_id": "rkvr.2IW0dBlHkz4I7zwBrFQgIhlLFkR",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "google.golang.org/protobuf"
+          },
+          "versions": [
+            "v1.28.0"
+          ],
+          "match_count": 1
+        }
+      ],
+      "locations": [
+        {
+          "path": "/shoveler",
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    },
+    {
+      "external_id": "CVE-2015-5237",
+      "cve_id": "CVE-2015-5237",
+      "identifiers": {
+        "cve_id": [
+          "CVE-2015-5237"
+        ]
+      },
+      "engines": {
+        "grype": {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-5237",
+          "match_count": 1
+        }
+      },
+      "references": [
+        {
+          "url": "https://github.com/google/protobuf/issues/760",
+          "type": "advisory"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1256426",
+          "type": "advisory"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2015/08/27/2",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/ra28fed69eef3a71e5fe5daea001d0456b05b102044237330ec5c7c82@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r17dc6f394429f6bffb5e4c66555d93c2e9923cbbdc5a93db9a56c1c7@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r42e47994734cd1980ef3e204a40555336e10cc80096927aca2f37d90@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re6d04a214424a97ea59c62190d79316edf311a0a6346524dfef3b940@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r1263fa5b51e4ec3cb8f09ff40e4747428c71198e9bee93349ec96a3c@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r42ef6acfb0d86a2df0c2390702ecbe97d2104a331560f2790d17ca69@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rb71dac1d9dd4e8a8ae3dbc033aeae514eda9be1263c1df3b42a530a2@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r320dc858da88846ba00bb077bcca2cdf75b7dde0f6eb3a3d60dba6a1@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r85c9a764b573c786224688cc906c27e28343e18f5b33387f94cae90f@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r02e39d7beb32eebcdbb4b516e95f67d71c90d5d462b26f4078d21eeb@%3Cuser.flink.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r02e39d7beb32eebcdbb4b516e95f67d71c90d5d462b26f4078d21eeb@%3Cdev.flink.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r5e52caf41dc49df55b4ee80758356fe1ff2a88179ff24c685de7c28d@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rf7539287c90be979bac94af9aaba34118fbf968864944b4871af48dd@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r1d274d647b3c2060df9be21eade4ce56d3a59998cf19ac72662dd994@%3Ccommits.pulsar.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r4886108206d4c535db9b20c813fe4723d4fe6a91b9278382af8b9d08@%3Cissues.spark.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rb40dc9d63a5331bce8e80865b7fa3af9dd31e16555affd697b6f3526@%3Cissues.spark.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r5741f4dbdd129dbb9885f5fb170dc1b24a06b9313bedef5e67fded94@%3Cissues.spark.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r14fa8d38d5757254f1a2e112270c996711d514de2e3b01c93d397ab4@%3Cissues.spark.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r2ea33ce5591a9cb9ed52750b6ab42ab658f529a7028c3166ba93c7d5@%3Ccommon-issues.hadoop.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r00d9ab1fc0f1daf14cd4386564dd84f7889404438d81462c86dfa836@%3Ccommon-dev.hadoop.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r764fc66435ee4d185d359c28c0887d3e5866d7292a8d5598d9e7cbc4@%3Ccommon-issues.hadoop.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r0ca83171c4898dc92b86fa6f484a7be1dc96206765f4d01dce0f1b28@%3Ccommon-issues.hadoop.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r00097d0b5b6164ea428554007121d5dc1f88ba2af7b9e977a10572cd@%3Cdev.hbase.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rd64381fb8f92d640c1975dc50dcdf1b8512e02a2a7b20292d3565cae@%3Cissues.hbase.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r4ef574a5621b0e670a3ce641e9922543e34f22bf4c9ee9584aa67fcf@%3Cissues.hbase.apache.org%3E",
+          "type": "advisory"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r7fed8dd9bee494094e7011cf3c2ab75bd8754ea314c6734688c42932@%3Ccommon-issues.hadoop.apache.org%3E",
+          "type": "advisory"
+        }
+      ],
+      "details": {
+        "data": "protobuf allows remote authenticated attackers to cause a heap-based buffer overflow.",
+        "engine": "grype"
+      },
+      "summary": {
+        "data": "protobuf allows remote authenticated attackers to cause a heap-based buffer overflow.",
+        "engine": "grype"
+      },
+      "score": {
+        "data": 8.8,
+        "sources": [
+          "nvd:cpe"
+        ],
+        "engines": [
+          "grype"
+        ],
+        "type": "cvss",
+        "version": "3.1",
+        "context": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+      },
+      "scores": [
+        {
+          "data": 6.5,
+          "source": "nvd:cpe",
+          "engine": "grype",
+          "type": "cvss",
+          "version": "2.0",
+          "context": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "data": 8.8,
+          "source": "nvd:cpe",
+          "engine": "grype",
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "severity": {
+        "data": "HIGH",
+        "engines": [
+          "grype"
+        ],
+        "sources": [
+          "nvd:cpe"
+        ]
+      },
+      "severities": [
+        {
+          "data": "HIGH",
+          "engine": "grype",
+          "source": "nvd:cpe"
+        }
+      ],
+      "fix_state": "unknown",
+      "record_id": "rkvr.2IW0dD2Gnf8wIav45JEZvYFAzkI",
+      "total_match_count": 1,
+      "affected": [
+        {
+          "package": {
+            "name": "google.golang.org/protobuf"
+          },
+          "versions": [
+            "v1.28.0"
+          ],
+          "match_count": 1
+        }
+      ],
+      "locations": [
+        {
+          "path": "/shoveler",
+          "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "unique_vulnerability": {
+      "count": 14,
+      "severity_counts": {
+        "BAD": 0,
+        "CRITICAL": 0,
+        "HIGH": 8,
+        "LOW": 0,
+        "MEDIUM": 3,
+        "NEGLIGIBLE": 0,
+        "UNKNOWN": 3
+      },
+      "engines": {
+        "grype": {
+          "count": 2,
+          "severity_counts": {
+            "BAD": 0,
+            "CRITICAL": 0,
+            "HIGH": 1,
+            "LOW": 0,
+            "MEDIUM": 1,
+            "NEGLIGIBLE": 0,
+            "UNKNOWN": 0
+          }
+        },
+        "trivy": {
+          "count": 12,
+          "severity_counts": {
+            "BAD": 0,
+            "CRITICAL": 0,
+            "HIGH": 7,
+            "LOW": 0,
+            "MEDIUM": 2,
+            "NEGLIGIBLE": 0,
+            "UNKNOWN": 3
+          }
+        }
+      }
+    },
+    "vulnerability_match": {
+      "count": 14,
+      "severity_counts": {
+        "BAD": 0,
+        "CRITICAL": 0,
+        "HIGH": 8,
+        "LOW": 0,
+        "MEDIUM": 3,
+        "NEGLIGIBLE": 0,
+        "UNKNOWN": 3
+      },
+      "engines": {
+        "grype": {
+          "count": 2,
+          "severity_counts": {
+            "BAD": 0,
+            "CRITICAL": 0,
+            "HIGH": 1,
+            "LOW": 0,
+            "MEDIUM": 1,
+            "NEGLIGIBLE": 0,
+            "UNKNOWN": 0
+          }
+        },
+        "trivy": {
+          "count": 12,
+          "severity_counts": {
+            "BAD": 0,
+            "CRITICAL": 0,
+            "HIGH": 7,
+            "LOW": 0,
+            "MEDIUM": 2,
+            "NEGLIGIBLE": 0,
+            "UNKNOWN": 3
+          }
+        }
+      }
+    },
+    "total_package_count": 14,
+    "top": [
+      {
+        "external_id": "CVE-2022-32149",
+        "cve_id": "CVE-2022-32149",
+        "identifiers": {
+          "cve_id": [
+            "CVE-2022-32149"
+          ],
+          "cwe": [
+            "CWE-772"
+          ]
+        },
+        "engines": {
+          "trivy": {
+            "url": "https://avd.aquasec.com/nvd/cve-2022-32149",
+            "match_count": 1,
+            "affected": [
+              {
+                "package": {
+                  "name": "golang.org/x/text"
+                },
+                "versions": [
+                  "v0.3.6"
+                ],
+                "match_count": 1
+              }
+            ],
+            "package_count": 1
+          }
+        },
+        "references": [
+          {
+            "url": "https://access.redhat.com/security/cve/CVE-2022-32149",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-69ch-w2m2-3vjp",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/golang/go/issues/56152",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/golang/text/commit/434eadcdbc3b0256971992e8c70027278364c72c",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/cl/442235",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/issue/56152",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/-hjNw559_tE/m/KlGTfid5CAAJ",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-dev/c/qfPIly0X7aU",
+            "type": "advisory"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32149",
+            "type": "advisory"
+          },
+          {
+            "url": "https://pkg.go.dev/vuln/GO-2022-1059",
+            "type": "advisory"
+          }
+        ],
+        "details": {
+          "data": "An attacker may cause a denial of service by crafting an Accept-Language header which ParseAcceptLanguage will take significant time to parse.",
+          "engine": "trivy"
+        },
+        "summary": {
+          "data": "golang: golang.org/x/text/language: ParseAcceptLanguage takes a long time to parse complex tags",
+          "engine": "trivy"
+        },
+        "score": {
+          "data": 7.5,
+          "sources": [
+            "redhat",
+            "nvd"
+          ],
+          "engines": [
+            "trivy"
+          ],
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "scores": [
+          {
+            "data": 7.5,
+            "source": "redhat",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          {
+            "data": 7.5,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "severity": {
+          "data": "HIGH",
+          "engines": [
+            "trivy"
+          ]
+        },
+        "severities": [
+          {
+            "data": "HIGH",
+            "engine": "trivy",
+            "source": ""
+          }
+        ],
+        "fix_state": "fixed",
+        "published": "2022-10-14T15:15:00Z",
+        "record_id": "rkvr.2IW0cIYJWbJJd4Cp5QqighuGdtR",
+        "total_match_count": 1,
+        "affected": [
+          {
+            "package": {
+              "name": "golang.org/x/text"
+            },
+            "versions": [
+              "v0.3.6"
+            ],
+            "match_count": 1
+          }
+        ],
+        "package_count": 1,
+        "locations": [
+          {
+            "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+          }
+        ]
+      },
+      {
+        "external_id": "CVE-2022-27664",
+        "cve_id": "CVE-2022-27664",
+        "identifiers": {
+          "cve_id": [
+            "CVE-2022-27664"
+          ]
+        },
+        "engines": {
+          "trivy": {
+            "url": "https://avd.aquasec.com/nvd/cve-2022-27664",
+            "match_count": 1,
+            "affected": [
+              {
+                "package": {
+                  "name": "golang.org/x/net"
+                },
+                "versions": [
+                  "v0.0.0-20210226172049-e18ecbb05110"
+                ],
+                "match_count": 1
+              }
+            ],
+            "package_count": 1
+          }
+        },
+        "references": [
+          {
+            "url": "https://access.redhat.com/errata/RHSA-2022:7129",
+            "type": "advisory"
+          },
+          {
+            "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-27664.json",
+            "type": "advisory"
+          },
+          {
+            "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32189.json",
+            "type": "advisory"
+          },
+          {
+            "url": "https://access.redhat.com/security/cve/CVE-2022-27664",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/1913333",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/1913338",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2107371",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2107374",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2107383",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2107386",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2107388",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2113814",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2124669",
+            "type": "advisory"
+          },
+          {
+            "url": "https://errata.almalinux.org/8/ALSA-2022-7129.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/cl/428735",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/issue/54658",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/x49AQzIVX-s",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/x49AQzIVX-s/m/0tgO0pjiBQAJ",
+            "type": "advisory"
+          },
+          {
+            "url": "https://linux.oracle.com/cve/CVE-2022-27664.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://linux.oracle.com/errata/ELSA-2022-7129.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXKTHIGE5F576MAPFYCIJXNRGBSPISUF/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TXS2OQ57KZC5XZKK5UW4SYKPVQAHIOJX/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-27664",
+            "type": "advisory"
+          },
+          {
+            "url": "https://pkg.go.dev/vuln/GO-2022-0969",
+            "type": "advisory"
+          },
+          {
+            "url": "https://security.gentoo.org/glsa/202209-26",
+            "type": "advisory"
+          },
+          {
+            "url": "https://security.netapp.com/advisory/ntap-20220923-0004/",
+            "type": "advisory"
+          }
+        ],
+        "details": {
+          "data": "In net/http in Go before 1.18.6 and 1.19.x before 1.19.1, attackers can cause a denial of service because an HTTP/2 connection can hang during closing if shutdown were preempted by a fatal error.",
+          "engine": "trivy"
+        },
+        "summary": {
+          "data": "golang: net/http: handle server errors after sending GOAWAY",
+          "engine": "trivy"
+        },
+        "score": {
+          "data": 7.5,
+          "sources": [
+            "nvd",
+            "redhat"
+          ],
+          "engines": [
+            "trivy"
+          ],
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "scores": [
+          {
+            "data": 7.5,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          {
+            "data": 7.5,
+            "source": "redhat",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "severity": {
+          "data": "HIGH",
+          "engines": [
+            "trivy"
+          ]
+        },
+        "severities": [
+          {
+            "data": "HIGH",
+            "engine": "trivy",
+            "source": ""
+          }
+        ],
+        "fix_state": "fixed",
+        "published": "2022-09-06T18:15:00Z",
+        "record_id": "rkvr.2IW0cLqbX3rU3ZQf1FjBH3sNsuN",
+        "total_match_count": 1,
+        "affected": [
+          {
+            "package": {
+              "name": "golang.org/x/net"
+            },
+            "versions": [
+              "v0.0.0-20210226172049-e18ecbb05110"
+            ],
+            "match_count": 1
+          }
+        ],
+        "package_count": 1,
+        "locations": [
+          {
+            "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+          }
+        ]
+      },
+      {
+        "external_id": "CVE-2022-27191",
+        "cve_id": "CVE-2022-27191",
+        "identifiers": {
+          "cve_id": [
+            "CVE-2022-27191"
+          ],
+          "cwe": [
+            "CWE-327"
+          ]
+        },
+        "engines": {
+          "trivy": {
+            "url": "https://avd.aquasec.com/nvd/cve-2022-27191",
+            "match_count": 1,
+            "affected": [
+              {
+                "package": {
+                  "name": "golang.org/x/crypto"
+                },
+                "versions": [
+                  "v0.0.0-20210711020723-a769d52b0f97"
+                ],
+                "match_count": 1
+              }
+            ],
+            "package_count": 1
+          }
+        },
+        "references": [
+          {
+            "url": "https://access.redhat.com/errata/RHSA-2022:8008",
+            "type": "advisory"
+          },
+          {
+            "url": "https://access.redhat.com/security/cve/CVE-2022-27191",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/1939485",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/1989564",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/1989570",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/1989575",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2064702",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2121445",
+            "type": "advisory"
+          },
+          {
+            "url": "https://bugzilla.redhat.com/2121453",
+            "type": "advisory"
+          },
+          {
+            "url": "https://errata.almalinux.org/9/ALSA-2022-8008.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-8c26-wmh5-6g9v",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/cl/392355",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.googlesource.com/crypto/+/1baeb1ce4c0b006eff0f294c47cb7617598dfb3d",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/-cp44ypCT5s",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/-cp44ypCT5s/m/wmegxkLiAQAJ",
+            "type": "advisory"
+          },
+          {
+            "url": "https://linux.oracle.com/cve/CVE-2022-27191.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://linux.oracle.com/errata/ELSA-2022-8008.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DLUJZV3HBP56ADXU6QH2V7RNYUPMVBXQ/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EZ3S7LB65N54HXXBCB67P4TTOHTNPP5O/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HHGBEGJ54DZZGTXFUQNS7ZIG3E624YAF/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J5WPM42UR6XIBQNQPNQHM32X7S4LJTRX/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QTFOIDHQRGNI4P6LYN6ILH5G443RYYKB/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RQXU752ALW53OJAF5MG3WMR5CCZVLWW6/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YHYRQB7TRMHDB3NEHW5XBRG7PPMUTPGV/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z55VUVGO7E5PJFXIOVAY373NZRHBNCI5/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZFUNHFHQVJSADNH7EZ3B53CYDZVEEPBP/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZQNPPQWSTP2IX7SHE6TS4SP4EVMI5EZK/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZY2SLWOQR4ZURQ7UBRZ7JIX6H6F5JHJR/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-27191",
+            "type": "advisory"
+          },
+          {
+            "url": "https://pkg.go.dev/vuln/GO-2021-0356",
+            "type": "advisory"
+          },
+          {
+            "url": "https://security.netapp.com/advisory/ntap-20220429-0002/",
+            "type": "advisory"
+          }
+        ],
+        "details": {
+          "data": "The golang.org/x/crypto/ssh package before 0.0.0-20220314234659-1baeb1ce4c0b for Go allows an attacker to crash a server in certain circumstances involving AddHostKey.",
+          "engine": "trivy"
+        },
+        "summary": {
+          "data": "golang: crash in a golang.org/x/crypto/ssh server",
+          "engine": "trivy"
+        },
+        "score": {
+          "data": 7.5,
+          "sources": [
+            "nvd",
+            "redhat"
+          ],
+          "engines": [
+            "trivy"
+          ],
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "scores": [
+          {
+            "data": 4.3,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "2",
+            "context": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+          },
+          {
+            "data": 7.5,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          {
+            "data": 7.5,
+            "source": "redhat",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "severity": {
+          "data": "HIGH",
+          "engines": [
+            "trivy"
+          ]
+        },
+        "severities": [
+          {
+            "data": "HIGH",
+            "engine": "trivy",
+            "source": ""
+          }
+        ],
+        "fix_state": "fixed",
+        "published": "2022-03-18T07:15:00Z",
+        "record_id": "rkvr.2IW0cLAJGD6D6324RurKLYaA3Hw",
+        "total_match_count": 1,
+        "affected": [
+          {
+            "package": {
+              "name": "golang.org/x/crypto"
+            },
+            "versions": [
+              "v0.0.0-20210711020723-a769d52b0f97"
+            ],
+            "match_count": 1
+          }
+        ],
+        "package_count": 1,
+        "locations": [
+          {
+            "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+          }
+        ]
+      },
+      {
+        "external_id": "CVE-2021-44716",
+        "cve_id": "CVE-2021-44716",
+        "identifiers": {
+          "cve_id": [
+            "CVE-2021-44716"
+          ],
+          "cwe": [
+            "CWE-400"
+          ]
+        },
+        "engines": {
+          "trivy": {
+            "url": "https://avd.aquasec.com/nvd/cve-2021-44716",
+            "match_count": 1,
+            "affected": [
+              {
+                "package": {
+                  "name": "golang.org/x/net"
+                },
+                "versions": [
+                  "v0.0.0-20210226172049-e18ecbb05110"
+                ],
+                "match_count": 1
+              }
+            ],
+            "package_count": 1
+          }
+        },
+        "references": [
+          {
+            "url": "https://access.redhat.com/security/cve/CVE-2021-44716",
+            "type": "advisory"
+          },
+          {
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44716",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/golang/go/commit/48d948963c5ce7add72af5665a871caff6c1d35a (go1.17.5)",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/golang/go/issues/50058",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/golang/net/commit/491a49abca63de5e07ef554052d180a1b5fe2d70",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/cl/369794",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/issue/50058",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/hcmEScgc00k",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/hcmEScgc00k/m/ZWnOjeY4CQAJ",
+            "type": "advisory"
+          },
+          {
+            "url": "https://linux.oracle.com/cve/CVE-2021-44716.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://linux.oracle.com/errata/ELSA-2022-0001.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.debian.org/debian-lts-announce/2022/01/msg00016.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://lists.debian.org/debian-lts-announce/2022/01/msg00017.html",
+            "type": "advisory"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44716",
+            "type": "advisory"
+          },
+          {
+            "url": "https://pkg.go.dev/vuln/GO-2022-0288",
+            "type": "advisory"
+          },
+          {
+            "url": "https://security.gentoo.org/glsa/202208-02",
+            "type": "advisory"
+          },
+          {
+            "url": "https://security.netapp.com/advisory/ntap-20220121-0002/",
+            "type": "advisory"
+          }
+        ],
+        "details": {
+          "data": "net/http in Go before 1.16.12 and 1.17.x before 1.17.5 allows uncontrolled memory consumption in the header canonicalization cache via HTTP/2 requests.",
+          "engine": "trivy"
+        },
+        "summary": {
+          "data": "golang: net/http: limit growth of header canonicalization cache",
+          "engine": "trivy"
+        },
+        "score": {
+          "data": 7.5,
+          "sources": [
+            "nvd",
+            "redhat"
+          ],
+          "engines": [
+            "trivy"
+          ],
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "scores": [
+          {
+            "data": 5,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "2",
+            "context": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+          },
+          {
+            "data": 7.5,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          {
+            "data": 7.5,
+            "source": "redhat",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "severity": {
+          "data": "HIGH",
+          "engines": [
+            "trivy"
+          ]
+        },
+        "severities": [
+          {
+            "data": "HIGH",
+            "engine": "trivy",
+            "source": ""
+          }
+        ],
+        "fix_state": "fixed",
+        "published": "2022-01-01T05:15:00Z",
+        "record_id": "rkvr.2IW0cJv7EiRodavGQJ7saTRi3QY",
+        "total_match_count": 1,
+        "affected": [
+          {
+            "package": {
+              "name": "golang.org/x/net"
+            },
+            "versions": [
+              "v0.0.0-20210226172049-e18ecbb05110"
+            ],
+            "match_count": 1
+          }
+        ],
+        "package_count": 1,
+        "locations": [
+          {
+            "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+          }
+        ]
+      },
+      {
+        "external_id": "CVE-2021-43565",
+        "cve_id": "CVE-2021-43565",
+        "identifiers": {
+          "cve_id": [
+            "CVE-2021-43565"
+          ]
+        },
+        "engines": {
+          "trivy": {
+            "url": "https://avd.aquasec.com/nvd/cve-2021-43565",
+            "match_count": 1,
+            "affected": [
+              {
+                "package": {
+                  "name": "golang.org/x/crypto"
+                },
+                "versions": [
+                  "v0.0.0-20210711020723-a769d52b0f97"
+                ],
+                "match_count": 1
+              }
+            ],
+            "package_count": 1
+          }
+        },
+        "references": [
+          {
+            "url": "https://access.redhat.com/security/cve/CVE-2021-43565",
+            "type": "advisory"
+          },
+          {
+            "url": "https://github.com/advisories/GHSA-gwc9-m7rh-j2ww",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/cl/368814/",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/issues/49932",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/forum/#!forum/golang-announce",
+            "type": "advisory"
+          },
+          {
+            "url": "https://groups.google.com/g/golang-announce/c/2AR1sKiM-Qs",
+            "type": "advisory"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-43565",
+            "type": "advisory"
+          },
+          {
+            "url": "https://pkg.go.dev/vuln/GO-2022-0968",
+            "type": "advisory"
+          }
+        ],
+        "details": {
+          "data": "The x/crypto/ssh package before 0.0.0-20211202192323-5770296d904e of golang.org/x/crypto allows an attacker to panic an SSH server.",
+          "engine": "trivy"
+        },
+        "summary": {
+          "data": "golang.org/x/crypto: empty plaintext packet causes panic",
+          "engine": "trivy"
+        },
+        "score": {
+          "data": 7.5,
+          "sources": [
+            "nvd",
+            "redhat"
+          ],
+          "engines": [
+            "trivy"
+          ],
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "scores": [
+          {
+            "data": 7.5,
+            "source": "nvd",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          {
+            "data": 7.5,
+            "source": "redhat",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "severity": {
+          "data": "HIGH",
+          "engines": [
+            "trivy"
+          ]
+        },
+        "severities": [
+          {
+            "data": "HIGH",
+            "engine": "trivy",
+            "source": ""
+          }
+        ],
+        "fix_state": "fixed",
+        "published": "2022-09-06T18:15:00Z",
+        "record_id": "rkvr.2IW0cLpBebsMXFWtEjGHAVHf312",
+        "total_match_count": 1,
+        "affected": [
+          {
+            "package": {
+              "name": "golang.org/x/crypto"
+            },
+            "versions": [
+              "v0.0.0-20210711020723-a769d52b0f97"
+            ],
+            "match_count": 1
+          }
+        ],
+        "package_count": 1,
+        "locations": [
+          {
+            "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+          }
+        ]
+      },
+      {
+        "external_id": "CVE-2021-38561",
+        "cve_id": "CVE-2021-38561",
+        "identifiers": {
+          "cve_id": [
+            "CVE-2021-38561"
+          ]
+        },
+        "engines": {
+          "trivy": {
+            "url": "https://avd.aquasec.com/nvd/cve-2021-38561",
+            "match_count": 1,
+            "affected": [
+              {
+                "package": {
+                  "name": "golang.org/x/text"
+                },
+                "versions": [
+                  "v0.3.6"
+                ],
+                "match_count": 1
+              }
+            ],
+            "package_count": 1
+          }
+        },
+        "references": [
+          {
+            "url": "https://access.redhat.com/security/cve/CVE-2021-38561",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.dev/cl/340830",
+            "type": "advisory"
+          },
+          {
+            "url": "https://go.googlesource.com/text/+/383b2e75a7a4198c42f8f87833eefb772868a56f",
+            "type": "advisory"
+          },
+          {
+            "url": "https://pkg.go.dev/vuln/GO-2021-0113",
+            "type": "advisory"
+          }
+        ],
+        "details": {
+          "data": "A flaw was found in golang. The language package for go language can panic due to an out-of-bounds read when an incorrectly formatted language tag is being parsed. This flaw allows an attacker to cause applications using this package to parse untrusted input data to crash, leading to a denial of service of the affected component.",
+          "engine": "trivy"
+        },
+        "summary": {
+          "data": "golang: out-of-bounds read in golang.org/x/text/language leads to DoS",
+          "engine": "trivy"
+        },
+        "score": {
+          "data": 7.5,
+          "sources": [
+            "redhat"
+          ],
+          "engines": [
+            "trivy"
+          ],
+          "type": "cvss",
+          "version": "3.1",
+          "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "scores": [
+          {
+            "data": 7.5,
+            "source": "redhat",
+            "engine": "trivy",
+            "type": "cvss",
+            "version": "3.1",
+            "context": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "severity": {
+          "data": "HIGH",
+          "engines": [
+            "trivy"
+          ]
+        },
+        "severities": [
+          {
+            "data": "HIGH",
+            "engine": "trivy",
+            "source": ""
+          }
+        ],
+        "fix_state": "fixed",
+        "record_id": "rkvr.2IW0cFm2wpyvMd4RxXXJ23En5hD",
+        "total_match_count": 1,
+        "affected": [
+          {
+            "package": {
+              "name": "golang.org/x/text"
+            },
+            "versions": [
+              "v0.3.6"
+            ],
+            "match_count": 1
+          }
+        ],
+        "package_count": 1,
+        "locations": [
+          {
+            "layer": "sha256:71f63151d1348d319cbe3973cf938fbdb3cca23900deb91f9b0dab5fba5d3a26"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "report_schema": "1",
+    "report_time": "2022-12-05T23:15:19Z",
+    "engines": {
+      "grype": {
+        "app": {
+          "version": "0.42.0",
+          "report_schema": "",
+          "hashes": {
+            "calculated": "sha256:b710658de68d730c1eec4b2cc0ffa3058fdcc1a7426b8f468ea2b74994e9c85d"
+          }
+        },
+        "data": {
+          "version_schema": "4",
+          "update_time": "2022-12-05 08:17:58 +0000 UTC",
+          "hashes": {
+            "calculated": "sha256:09f1eec17027c61f0993b848b314ad339755c9703f6c29e8128324b60aa479c2",
+            "reported": "sha256:09f1eec17027c61f0993b848b314ad339755c9703f6c29e8128324b60aa479c2"
+          }
+        }
+      },
+      "trivy": {
+        "app": {
+          "version": "0.32.1",
+          "report_schema": "",
+          "hashes": {
+            "calculated": "sha256:4260d7045a1dc2b05188c484d77589d111eb017ce9c8a55430c034ac196a57ad"
+          }
+        },
+        "data": {
+          "version_schema": "2",
+          "update_time": "2022-12-05T18:07:56.730393185Z",
+          "hashes": {
+            "calculated": "sha256:34c31645b4acfab214f71f1f5d707a03bf9e4eb442bed14a4fdab1984feb5710"
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "connector": "dockerhub.authenticated",
+    "path": "docker.io/upsideon/shoveler:shoveler-backend",
+    "namespace": "upsideon",
+    "entity": "shoveler",
+    "tag": "shoveler-backend",
+    "digest": "bd05b84e9741111edecc454c74e52d2a0a6f180f460c2267b09172ccad1ad8a1"
+  }
+}

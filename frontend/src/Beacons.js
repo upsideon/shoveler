@@ -193,17 +193,50 @@ class AddBeacon extends React.Component {
   }
 }
 
-function FindBeacon() {
-  return (
-    <div className="beacon-sections find-beacon">
-      <h2>Open Beacons</h2>
-      <p>If you would like to help someone shovel, claim a beacon here.</p>
-      <List>
-        <Beacon address="30 Rockefeller Plaza, New York, NY"/>
-        <Beacon address="1600 Pennsylvania Avenue NW, Washington, DC 20500"/>
-      </List>
-    </div>
-  );
+class FindBeacon extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.state = {
+      beacons: [],
+    };
+    this.getBeacons = this.getBeacons.bind(this);
+  }
+
+  async componentDidMount () {
+    const beacons = await this.getBeacons();
+    this.setState({ beacons });
+  }
+
+  async getBeacons() {
+    const response = await axios.get(
+      'http://localhost:8080/beacons?includeOwner=false',
+      getHeaders(),
+    );
+    const beacons = JSON.parse(response.data);
+    return beacons;
+  }
+
+  render() {
+    return (
+      <div className="beacon-sections find-beacon">
+        <h2>Open Beacons</h2>
+        <p>If you would like to help someone shovel, claim a beacon here.</p>
+        <List>
+          {
+            this.state.beacons.map(beacon => {
+              const id = beacon.id;
+              return <Beacon
+                address={beacon.address}
+                id={id}
+                key={id}
+              />
+            })
+          }
+        </List>
+      </div>
+    );
+  }
 }
 
 function Beacons() {

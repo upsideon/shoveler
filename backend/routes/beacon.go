@@ -79,11 +79,13 @@ func (c *BeaconController) Create(context *gin.Context) {
 }
 
 func (c *BeaconController) List(context *gin.Context) {
-	ownerId, exists := context.Get("accountId")
+	ownerIdFromContext, exists := context.Get("accountId")
 	if !exists {
 		context.String(http.StatusForbidden, "Forbidden")
 		return
 	}
+
+	ownerId := ownerIdFromContext.(string)
 
 	includeOwnerStr := context.DefaultQuery("includeOwner", "true")
 	includeOwner, err := strconv.ParseBool(includeOwnerStr)
@@ -93,7 +95,7 @@ func (c *BeaconController) List(context *gin.Context) {
 	}
 
 	beacon := Beacon{
-		OwnerId: ownerId.(string),
+		OwnerId: ownerId,
 	}
 
 	selectBeaconsBuilder := qb.Select(
@@ -104,8 +106,6 @@ func (c *BeaconController) List(context *gin.Context) {
 
 	if includeOwner {
 		selectBeaconsBuilder = selectBeaconsBuilder.Where(qb.Eq("owner_id"))
-	} else {
-		selectBeaconsBuilder = selectBeaconsBuilder.Where(qb.Ne("owner_id"))
 	}
 
 	selectBeacons := selectBeaconsBuilder.Query(c.Database).BindStruct(&beacon).Iter()
@@ -114,6 +114,9 @@ func (c *BeaconController) List(context *gin.Context) {
 
 	beacon = Beacon{}
 	for selectBeacons.StructScan(&beacon) {
+		if !includeOwner && beacon.OwnerId == ownerId {
+			continue
+		}
 		allBeacons = append(allBeacons, beacon)
 	}
 

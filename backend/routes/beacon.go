@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
@@ -84,17 +85,30 @@ func (c *BeaconController) List(context *gin.Context) {
 		return
 	}
 
+	includeOwnerStr := context.DefaultQuery("includeOwner", "true")
+	includeOwner, err := strconv.ParseBool(includeOwnerStr)
+	if err != nil {
+		context.String(http.StatusBadRequest, "Bad Request")
+		return
+	}
+
 	beacon := Beacon{
 		OwnerId: ownerId.(string),
 	}
 
-	selectBeacons := qb.Select(
+	selectBeaconsBuilder := qb.Select(
 		"shoveler.beacons",
 	).Columns(
 		"id", "owner_id", "helper_id", "address",
-	).Where(
-		qb.Eq("owner_id"),
-	).Query(c.Database).BindStruct(&beacon).Iter()
+	)
+
+	if includeOwner {
+		selectBeaconsBuilder = selectBeaconsBuilder.Where(qb.Eq("owner_id"))
+	} else {
+		selectBeaconsBuilder = selectBeaconsBuilder.Where(qb.Ne("owner_id"))
+	}
+
+	selectBeacons := selectBeaconsBuilder.Query(c.Database).BindStruct(&beacon).Iter()
 
 	allBeacons := []Beacon{}
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Beacons from './Beacons';
 
 import './Dashboard.css';

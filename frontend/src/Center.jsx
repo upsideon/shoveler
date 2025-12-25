@@ -1,9 +1,7 @@
-import React from 'react';
-
 function Center() {
   return (
     <div className="center">
-      <img src="images/snowy-neighborhood.jpg" className="center-image" alt="A snowy neighborhood." />
+      <img src="/snowy-neighborhood.jpg" className="center-image" alt="A snowy neighborhood." />
       <h2 className="description-font font-family">
         Not
         <span className="slogan-emphasis"> everyone </span>

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Gallery.css';
@@ -25,22 +24,22 @@ function Gallery() {
       <GalleryPanel
         alt="Man smiling while looking at phone."
         description="Create an account."
-        backgroundImage="/images/sign-up.jpg"
+        backgroundImage="/sign-up.jpg"
       />
       <GalleryPanel
         alt="Woman looking out the window while holding a book."
         description="Ask for help, if you need it."
-        backgroundImage="/images/woman-window.jpg"
+        backgroundImage="/woman-window.jpg"
       />
       <GalleryPanel
         alt="A snow shoveler pushing snow along a sidewalk."
         description="Offer help, if you can."
-        backgroundImage="/images/shovel.jpg"
+        backgroundImage="/shovel.jpg"
       />
       <GalleryPanel
         alt="A man and a woman smiling while holding snow shovels."
         description="Build a community."
-        backgroundImage="/images/community.jpg"
+        backgroundImage="/community.jpg"
       />
     </div>
   );

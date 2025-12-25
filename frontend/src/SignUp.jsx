@@ -1,9 +1,9 @@
 import React from 'react';
+
 import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-import 'regenerator-runtime/runtime';
 import axios from 'axios';
 import {StatusCodes as HttpStatus} from 'http-status-codes';
 
@@ -13,7 +13,7 @@ function Email() {
   return (
     <div>
       <label htmlFor="email">
-        <b>Email</b>
+        <b className="description-font">Email</b>
       </label>
       <input type="text" name="email" required />
     </div>
@@ -24,7 +24,7 @@ function Password() {
   return (
     <div>
       <label htmlFor="password">
-        <b>Password</b>
+        <b className="description-font">Password</b>
       </label>
       <input type="password" name="password" required />
     </div>
@@ -35,7 +35,7 @@ function PasswordConfirm() {
   return (
     <div>
       <label htmlFor="password_confirm">
-        <b>Confirm Password</b>
+        <b className="description-font">Confirm Password</b>
       </label>
       <input type="password" name="password_confirm" required />
     </div>
@@ -142,7 +142,7 @@ function SignUp(props) {
           <div>
             <h1>Sign Up</h1>
 
-            <p> Find your shoveling buddy today. </p>
+            <p className="description-font"> Find your shoveling buddy today. </p>
             <hr />
             <Email />
             <Password />

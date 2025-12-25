@@ -1,15 +1,14 @@
-FROM node:19-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
-
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm install --silent -g npm@9.1.2 react-scripts@5.0.1 \
-    && npm install --silent \
-    && chown -R 744 /app/node_modules
+
+RUN npm install
 
 COPY . ./
 
-CMD ["npm", "start"]
+EXPOSE 5174
+
+CMD ["npm", "run", "dev"]

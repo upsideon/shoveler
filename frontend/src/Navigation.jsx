@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -40,7 +39,7 @@ function closeModalClick(modalId) {
 function Navigation() {
   return (
     <div className="navigation">
-      <img src="images/shoveler_logo.png" className="title" alt="Shoveler logo." />
+      <img src="/shoveler_logo.png" className="title" alt="Shoveler logo." />
       <AccountButton text="Sign In" onClick={openModalClick('signInModal')} />
       <AccountButton text="Create Account" onClick={openModalClick('signUpModal')} />
       <SignIn closeOnClick={closeModalClick('signInModal')} />

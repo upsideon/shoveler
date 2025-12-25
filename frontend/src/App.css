@@ -20,8 +20,10 @@ input[type="password"] {
   padding: 15px;
   margin: 5px 0 22px;
   display: inline-block;
-  border: none;
+  border: 1px solid black;
+  border-radius: 5px;
   background: #f1f1f1;
+  color: black;
 }
 
 button:hover {
@@ -129,7 +131,6 @@ label {
 }
 
 .title {
-  display: inline-block;
   margin-left: 15px;
   float: left;
   padding: 5px;
@@ -160,7 +161,6 @@ body {
 }
 
 .sign-in-button {
-  display: inline-block;
   border: none;
   border-radius: 5px;
   border-bottom: 5px solid #0073e6;

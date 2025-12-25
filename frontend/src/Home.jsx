@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Center from './Center';
 import Footer from './Footer';
 import Gallery from './Gallery';

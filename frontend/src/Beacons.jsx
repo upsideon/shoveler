@@ -47,7 +47,7 @@ class Beacon extends React.Component {
           <ListItemAvatar>
             <Avatar />
           </ListItemAvatar>
-          <ListItemText primary={props.address} />
+          <ListItemText primary={props.address} classes={{ primary: "description-font" }}/>
         </ListItemButton>
       </ListItem>
     );
@@ -173,7 +173,7 @@ class AddBeacon extends React.Component {
           >
             <AddIcon />
           </Fab>
-          <p className="add-description">If you are looking for help, add a beacon here.</p>
+          <p className="add-description description-font">If you are looking for help, add a beacon here.</p>
         </div>
         {
           this.state.beacons.map(beacon => {
@@ -221,7 +221,7 @@ class FindBeacon extends React.Component {
     return (
       <div className="beacon-sections find-beacon">
         <h2>Open Beacons</h2>
-        <p>If you would like to help someone shovel, claim a beacon here.</p>
+        <p className="description-font">If you would like to help someone shovel, claim a beacon here.</p>
         <List>
           {
             this.state.beacons.map(beacon => {

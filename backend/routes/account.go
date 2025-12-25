@@ -1,29 +1,17 @@
 package routes
 
 import (
+	"errors"
 	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/scylladb/gocqlx/v2"
-	"github.com/scylladb/gocqlx/v2/qb"
-	"github.com/scylladb/gocqlx/v2/table"
 	"golang.org/x/crypto/bcrypt"
+
+	"shoveler/datastore"
+	"shoveler/models"
 )
-
-var accountsMetadata = table.Metadata{
-	Name:    "accounts",
-	Columns: []string{"id", "email", "password_hash"},
-}
-
-var accountsTable = table.New(accountsMetadata)
-
-type Account struct {
-	Id           string
-	Email        string
-	PasswordHash string
-}
 
 type AccountCreationRequest struct {
 	Email           string `form:"email" json:"email" binding:"required"`
@@ -32,7 +20,7 @@ type AccountCreationRequest struct {
 }
 
 type AccountController struct {
-	Database gocqlx.Session
+	AccountsDatastore datastore.AccountsDatastore
 }
 
 func (c *AccountController) Create(context *gin.Context) {
@@ -44,27 +32,17 @@ func (c *AccountController) Create(context *gin.Context) {
 		return
 	}
 
-	account := Account{Email: creationRequest.Email}
-
-	// Checking if account already exists.
-
-	selectAccount := qb.Select(
-		"shoveler.accounts",
-	).CountAll().Where(qb.Eq("email")).Query(c.Database).BindStruct(
-		account,
-	)
-
-	var count int
-
-	if err := selectAccount.GetRelease(&count); err != nil {
+	// Check if account already exists with the provided email.
+	// TODO - Consider adding a reCaptcha to prevent scripts from determining
+	// e-mail addresses for accounts.
+	existingAccount, err := c.AccountsDatastore.GetAccount(creationRequest.Email)
+	if err != nil && !errors.Is(err, datastore.ErrNotFound) {
 		log.Print(err)
 		context.String(http.StatusInternalServerError, "Internal Server Error")
 		return
 	}
 
-	if count != 0 {
-		log.Print(account)
-		// TODO - Add a reCaptcha to prevent scripts from determining e-mail addresses for accounts.
+	if existingAccount != nil {
 		context.String(
 			http.StatusBadRequest,
 			"Bad Request: An account already exists with that e-mail address.",
@@ -99,16 +77,14 @@ func (c *AccountController) Create(context *gin.Context) {
 		return
 	}
 
-	account.Id = id.String()
-	account.PasswordHash = string(hashedPassword)
+	account := models.Account{
+		Email:        creationRequest.Email,
+		Id:           id.String(),
+		PasswordHash: string(hashedPassword),
+	}
 
-	insertAccount := qb.Insert(
-		"shoveler.accounts",
-	).Columns(
-		"id", "email", "password_hash",
-	).Query(c.Database).BindStruct(account)
-
-	if err := insertAccount.ExecRelease(); err != nil {
+	err = c.AccountsDatastore.CreateAccount(&account)
+	if err != nil {
 		log.Print(err)
 		context.String(http.StatusInternalServerError, "Internal Server Error")
 		return

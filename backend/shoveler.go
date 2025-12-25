@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"shoveler/datastore"
 	"shoveler/middleware"
 	"shoveler/routes"
 
@@ -27,7 +28,7 @@ func main() {
 
 func initializeRouter(db gocqlx.Session) *gin.Engine {
 	accountController := routes.AccountController{
-		Database: db,
+		AccountsDatastore: datastore.NewCassandraAccountsDatastore(db),
 	}
 
 	beaconController := routes.BeaconController{

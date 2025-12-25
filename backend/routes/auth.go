@@ -3,13 +3,15 @@ package routes
 import (
 	"log"
 	"net/http"
-	"shoveler/auth"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gocql/gocql"
 	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/qb"
 	"golang.org/x/crypto/bcrypt"
+
+	"shoveler/auth"
+	"shoveler/models"
 )
 
 type LoginRequest struct {
@@ -30,7 +32,7 @@ func (c *LoginController) Login(context *gin.Context) {
 		return
 	}
 
-	account := Account{
+	account := models.Account{
 		Email: loginRequest.Email,
 	}
 

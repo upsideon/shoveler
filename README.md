@@ -7,7 +7,7 @@ The goals of this project, which is still in its infancy, are as follows:
 - If you are in need of snow shoveling assistance, there is a dedicated venue in which to make that need known and fulfilled.
 - If you have a desire to help others in your community, providing snow shoveling assistance is a clear and present option.
 
-There is no business model here. If this becomes something more than code on a Git repository, the intention is to run the service as a non-profit via donations. This project was inspired by the [Slim.AI Hackathon](https://slim-ai-hackathon.devpost.com/).
+There is no business model here. If this becomes something more than code on a Git repository, the intention is to run the service as a non-profit via donations. This project was inspired by the [Slim.AI Hackathon](https://slim-ai-hackathon.devpost.com/). The version of the project at the end of the hackathon time period can be accessed through the [slim-ai-hackathon](https://github.com/upsideon/shoveler/releases/tag/slim-ai-hackathon) Git tag.
 
 ### Development
 

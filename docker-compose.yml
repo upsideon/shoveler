@@ -1,6 +1,7 @@
 services:
   cassandra:
     image: cassandra:4.1
+    container_name: shoveler-cassandra
   shoveler-backend:
     depends_on:
       - cassandra

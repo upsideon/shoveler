@@ -17,7 +17,7 @@ If it is your first time running Shoveler, execute the following commands from t
 
 ```
 docker compose up -d cassandra
-docker exec -i shoveler_cassandra_1 cqlsh < database/migrations.cql
+docker exec -i shoveler-cassandra cqlsh < database/migrations.cql
 docker compose up -d shoveler-frontend shoveler-backend
 ```
 
